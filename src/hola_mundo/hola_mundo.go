@@ -10,9 +10,10 @@ func main() {
 	fmt.Println("Hola mundo")
 	fmt.Println(quote.Hello())
 
-	var firstName, lastName string
-	var age int
-
+	var (
+		firstName, lastName string
+		age                 int
+	)
 	firstName = "Alex"
 	lastName = "Roe"
 	age = 27
