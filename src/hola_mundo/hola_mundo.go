@@ -35,4 +35,6 @@ func main() {
 	var firstName, lastName, age = "Alex", "Roe", 27
 	println(firstName, lastName, age)
 	fmt.Println(math.MinInt64, math.MaxInt64) // Para saber el valor maximo y minimo que puede almacenar
+	fullName := "Ramiro \t(alias \"Garcia\")\n"
+	fmt.Println(fullName)
 }
