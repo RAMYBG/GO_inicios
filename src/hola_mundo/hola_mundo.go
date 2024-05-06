@@ -34,7 +34,11 @@ func main() {
 	fmt.Println(y, x, w, z)
 	var firstName, lastName, age = "Alex", "Roe", 27
 	println(firstName, lastName, age)
-	fmt.Println(math.MinInt64, math.MaxInt64) // Para saber el valor maximo y minimo que puede almacenar
-	fullName := "Ramiro \t(alias \"Garcia\")\n"
+	fmt.Println(math.MinInt64, math.MaxInt64)   // Para saber el valor maximo y minimo que puede almacenar
+	fullName := "Ramiro \t(alias \"Garcia\")\n" // imprime el nombre parentesis alias "Garcia"parentesis
 	fmt.Println(fullName)
+	var a byte = 'a'
+	fmt.Println(a) //Imprime el valor ascii de a
+	s := "hola"
+	fmt.Println(s[0]) // Imprime el valor de h en el codigo ascii
 }
