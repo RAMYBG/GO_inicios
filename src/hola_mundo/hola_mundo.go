@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 
 	"rsc.io/quote"
 )
@@ -33,4 +34,5 @@ func main() {
 	fmt.Println(y, x, w, z)
 	var firstName, lastName, age = "Alex", "Roe", 27
 	println(firstName, lastName, age)
+	fmt.Println(math.MinInt64, math.MaxInt64) // Para saber el valor maximo y minimo que puede almacenar
 }
