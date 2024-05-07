@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 	"time"
 )
 
@@ -15,5 +16,18 @@ func main() {
 		fmt.Println("!Tarde¡")
 	} else {
 		fmt.Println("!Tarde¡")
+	}
+
+	//Utilizar switch
+	os := runtime.GOOS
+	switch os {
+	case "windows":
+		fmt.Println("Go run -> Windows")
+	case "linux":
+		fmt.Println("Go run -> Linux")
+	case "darwin":
+		fmt.Println("Go run -> macOS")
+	default:
+		fmt.Println("Go run -> Otro OS")
 	}
 }
