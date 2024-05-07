@@ -37,6 +37,8 @@ func main() {
 	fmt.Println(math.MinInt64, math.MaxInt64)   // Valores máximo y mínimo para int64
 	fullName := "Ramiro \t(alias \"Garcia\")\n" // Nombre y alias en formato tabulado
 	fmt.Println(fullName)
+
+	//TIpo de dato byte en ascii
 	var a byte = 'a'
 	fmt.Println(a) // Imprime el valor ASCII de 'a'
 	s := "hola"
