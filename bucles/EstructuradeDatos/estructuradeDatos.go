@@ -8,14 +8,23 @@ type Persona struct {
 	correo string
 }
 
-// Estructura de datos
+func (s *Persona) diHola() {
+	fmt.Println("Hola, mi nombre es", s.nombre)
+}
+
+//Con el puntero se hace referencia a la memoria
 func main() {
-	var persona1 Persona //Se instancia
-	persona1.nombre = "Ramiro"
-	persona1.edad = 23
-	persona1.correo = "ramiro@gamil.com"
-	fmt.Println(persona1)
-	//Otra forma de instanciar
-	persona2 := Persona{"ramiro", 23, "Correo@gmail.com"}
-	fmt.Println(persona2)
+	s := Persona{"Ramiro", 23, "correo@gmail.com"}
+	s.diHola()
+	var x int = 10
+	var p *int = &x
+	fmt.Println(p)
+	fmt.Println(&x)
+	fmt.Println(*p)
+	editar(&x)
+	fmt.Println(x)
+}
+
+func editar(x *int) {
+	*x = 20
 }
