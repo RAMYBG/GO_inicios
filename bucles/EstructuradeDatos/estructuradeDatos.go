@@ -8,7 +8,7 @@ type Persona struct {
 	correo string
 }
 
-func (s *Persona) diHola() {
+func (s *Persona) diHola() { //Se utiliza el puntero de la estructura Persona s es la instancia probicional
 	fmt.Println("Hola, mi nombre es", s.nombre)
 }
 
