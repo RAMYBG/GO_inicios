@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to top, #b8e994 0%, #f0e5cf 100%); /* Fondo con degradado */
+    }
+    .container {
+        position: relative;
+        width: 200px;
+        animation: none; /* Removemos cualquier animación previa */
+    }
+    .sunflower {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: none;
+        animation: spin 20s infinite linear;
+    }
+    .sunflower::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at center, #d2ab67 5%, #886a2a 30%, #47311b 70%, #382e1c 100%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    .petal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 28px;
+        height: 100px;
+        background-color: #fdd835;
+        border-radius: 50% 50% 0 0;
+        transform-origin: bottom center;
+        box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+    .message {
+        position: absolute;
+        bottom: -140px; /* Ajustado para mejor visualización */
+        width: 100%;
+        text-align: center;
+        font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente más amigable */
+        font-size: 20px;
+        color: #545454;
+        text-shadow: 1px 1px 2px #9e9e9e; /* Sombra suave para el texto */
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="sunflower">
+      <div class="message">Que tengas un día radiante como el sol!</div>
+        <!-- Cada pétalo está rotado en un incremento de 20 grados -->
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(0deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(20deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(40deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(60deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(80deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(100deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(120deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(140deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(160deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(180deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(200deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(220deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(240deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(260deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(280deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(300deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(320deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(340deg);"></div>
+    </div>
+</div>
+</body>
+</html>
