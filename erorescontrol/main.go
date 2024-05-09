@@ -1,27 +1,25 @@
 package main
 
-import (
-	"fmt"
-	"os"
-)
+import "fmt"
+
+func divide(dividiendo, divisor int) {
+	//Funcio anonima
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println(r)
+		}
+	}()
+	validateZero(divisor)
+	fmt.Println(dividiendo / divisor)
+}
+func validateZero(divisor int) { //Se puede quitar y el sistema arroja el error
+	if divisor == 0 {
+		//Se utiliza para un panico
+		panic("no se puede dividir por cero")
+	}
+}
 
 func main() {
-	//Se ejecuta de orden jerarquico por el defer
-	defer fmt.Println(2)
-	defer fmt.Println(3)
-	fmt.Println(1)
-	//Se ejecuta de orden jerarquico por el defer
-
-	file, err := os.Create("hola.txt") //Es para crear el archivo y ontener su errror si ocurre
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	defer file.Close() //Se ejecuta antes de que se termine de ejecutar el main
-	_, err = file.Write([]byte("Hola, Ramiro Garcia"))
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
+	divide(100, 10)
+	divide(30, 0)
 }
