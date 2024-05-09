@@ -1,32 +1,27 @@
 package main
 
 import (
-	"errors" //Utilizar biblioteca errors
 	"fmt"
-	"strconv"
+	"os"
 )
 
-func divide(dividiendo, divisor int) (int, error) {
-	if divisor == 0 {
-		return 0, errors.New("No se puede dividir por cero") //Declaracio de nuestros propios errores
-	}
-	return dividiendo / divisor, nil
-}
-
 func main() {
-	//Error al dividir
-	result, err := divide(10, 2)
+	//Se ejecuta de orden jerarquico por el defer
+	defer fmt.Println(2)
+	defer fmt.Println(3)
+	fmt.Println(1)
+	//Se ejecuta de orden jerarquico por el defer
+
+	file, err := os.Create("hola.txt") //Es para crear el archivo y ontener su errror si ocurre
 	if err != nil {
-		fmt.Println("Error:", err)
+		fmt.Println(err)
 		return
 	}
-	fmt.Println("Resultado:", result)
-	//Error al convertir un string a un entero
-	str := "123f"
-	num, err := strconv.Atoi(str)
+	defer file.Close() //Se ejecuta antes de que se termine de ejecutar el main
+	_, err = file.Write([]byte("Hola, Ramiro Garcia"))
 	if err != nil {
-		fmt.Println("Error:", err)
-		return //Termina la funcion
+		fmt.Println(err)
+		return
 	}
-	fmt.Println("Numero:", num)
+
 }
