@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    :root {
+        --petal-color: #fdd835; /* Color de los pétalos */
+        --center-start-color: #d2ab67; /* Color inicial del centro */
+        --center-end-color: #382e1c; /* Color final del centro */
+        --background-start: #b8e994; /* Inicio del fondo degradado */
+        --background-end: #f0e5cf; /* Final del fondo degradado */
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to top, var(--background-start) 0%, var(--background-end) 100%);
+    }
+    .container {
+        position: relative;
+        width: 200px;
+    }
+    .sunflower {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: none;
+        animation: spin 20s infinite linear;
+    }
+    .sunflower:hover {
+        transform: scale(1.1); /* Efecto al pasar el ratón */
+        transition: transform 0.3s ease-in-out;
+    }
+    .sunflower::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at center, var(--center-start-color) 5%, #886a2a 30%, #47311b 70%, var(--center-end-color) 100%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    .petal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 28px;
+        height: 100px;
+        background-color: var(--petal-color);
+        border-radius: 50% 50% 0 0;
+        transform-origin: bottom center;
+        box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        transition: transform 0.3s ease-in-out; /* Transición suave para las transformaciones */
+    }
+    .message {
+        position: absolute;
+        bottom: -100px; /* Ajuste para colocar debajo del girasol */
+        width: 100%;
+        text-align: center;
+        font-family: 'Dancing Script', cursive; /* Fuente cursiva y elegante */
+        font-size: 24px; /* Tamaño más grande para mejor legibilidad */
+        color: #745a29; /* Color oscuro para mejor contraste */
+        text-shadow: 2px 2px 4px #ffffff; /* Sombra blanca para destacar el texto */
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="sunflower">
+        <!-- Cada pétalo está rotado en un incremento de 20 grados -->
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(0deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(20deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(40deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(60deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(80deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(100deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(120deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(140deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(160deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(180deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(200deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(220deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(240deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(260deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(280deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(300deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(320deg);"></div>
+        <div class="petal" style="transform: translate(-50%, -100%) rotate(340deg);"></div>
+    </div>
+    <div class="message">¡Que tengas un lindo día Monshe!</div> <!-- Mensaje colocado debajo de la girasol -->
+</div>
+</body>
+</html>
