@@ -1,12 +1,16 @@
 package main
 
-import "log"
+import (
+	"log"
+	"os"
+)
 
 func main() {
-	log.SetPrefix("main: ")                         //Prefijo para las lineas siguientes
-	log.Print("Este es un mesaje de registro")      //Inprime el tiempo en que ocurio
-	log.Println("Este es otro mensaje de registro") //Hace lo mismo que el anterior basicamente
-	//log.Fatal("Este es otro mensaje de registro")   // Se ejecuta y detiene la ejecucion  el programa
-	log.Panic("Este es otro mensaje de registro") //Nos muestra una pila de errores y registro y tambien termina la ejecucion
-
+	file, err := os.OpenFile("info.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644) //En este caso le ponemos .log por que va a registrar errores
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+	log.SetOutput(file)
+	log.Print("¡Oye, soy un log!")
 }
