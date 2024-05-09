@@ -84,14 +84,15 @@ func main() {
 			return
 		default:
 			fmt.Println("Opcion no valida")
-			//Listar todas las tareas
-			fmt.Println("Lista de tareas")
-			fmt.Println("===============================")
-			for i, t := range lista.tareas {
-				fmt.Printf("%d. %s -%s - Completado: %t\n", i, t.nombre, t.desc, t.completado)
-			}
-			fmt.Println("================================")
+
 		}
+		//Listar todas las tareas
+		fmt.Println("Lista de tareas")
+		fmt.Println("===============================")
+		for i, t := range lista.tareas {
+			fmt.Printf("%d. %s -%s - Completado: %t\n", i, t.nombre, t.desc, t.completado)
+		}
+		fmt.Println("================================")
 	}
 
 }
