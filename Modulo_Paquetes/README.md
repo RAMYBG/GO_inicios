@@ -5,7 +5,7 @@ Este paquete propociona una forma simple de obtener saludos personalizados en go
 ##Instalacion 
 Ejecuta el siguiente comando para instalar el paquete:
   bash
-  go get -u github.com/ramirogarcia/greetings
+  go get -u github.com/RAMYBG/GO_inicios
 
 
   ##Uso
@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ramirogarcia/greetings"
+	"github.com/RAMYBG/GO_inicios"
 )
 
 func main() {
