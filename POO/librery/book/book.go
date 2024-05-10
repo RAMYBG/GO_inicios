@@ -33,3 +33,22 @@ func (b *Book) SetTitle(title string) {
 func (b *Book) GetTitle() string {
 	return b.title
 }
+
+//Aqui se hace la herrrencia
+type TextBook struct {
+	Book             //Herreda de Book
+	editorial string //Agrega mas Valores
+	level     string
+}
+
+func NewTextBook(title, author string, pages int, editorial, level string) *TextBook {
+	return &TextBook{
+		Book:      Book{title, author, pages},
+		editorial: editorial,
+		level:     level,
+	}
+}
+
+func (b *TextBook) PrintAll() {
+	fmt.Printf("Title: %s\nAuthor: %s\nEditorial:%s\nNivel: %s\n", b.title, b.author, b.pages, b.editorial)
+}

@@ -13,5 +13,10 @@ func main() {
 
 	myBook2.SetTitle("Edicion Especial")
 	fmt.Println(myBook2.GetTitle())
+	myBook2.PrintInfo()
+
+	myTextBook := book.NewTextBook("Comunicacion",
+		"jaime Gamarra", 263, "Santillana SAC", "Secundaria")
+	myTextBook.PrintInfo()
 
 }
