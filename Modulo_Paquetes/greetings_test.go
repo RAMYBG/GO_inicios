@@ -8,9 +8,10 @@ import (
 // Test con el nombre
 func TestHelloName(t *testing.T) {
 	name := "Juan"                                 // Define una variable 'name' con el valor "Juan"
-	want := regexp.MustCompile(`\b` + name + `\b`) // Compila una expresión regular que busca la palabra "Juan" como palabra completa
+	want := regexp.MustCompile(`\b` + name + `\b`) // Se compila una expresión regular que busca la palabra "Juan" como una palabra completa en un texto. El \b es un metacaracter que representa un límite de palabra, así que esta expresión regular buscará exactamente la palabra "Juan", sin que sea parte de otra palabra más larga.
 	msg, err := Hello("Juan")                      // Llama a la función Hello con el argumento "Juan" y captura el mensaje y el error retornados
-	if !want.MatchString(msg) || err != nil {      // Verifica si el mensaje no coincide con la expresión regular o si hay un error
+	if !want.MatchString(msg) || err != nil {      ///// !want.MatchString(msg): Comprueba si el mensaje retornado (msg) no coincide con la expresión regular want. Si la expresión regular no encuentra la palabra "Juan" en msg, la condición se cumple.
+		//err != nil: Verifica si err es diferente de nil, lo que indica que hubo un error al ejecutar la función Hello.
 		t.Fatalf(`Hello("Juan")= %q, %v, quiere coincidencia para %#q, nil`, msg, err, want) // Registra un error fatal en la prueba si no se cumplen las condiciones esperadas
 	}
 }
