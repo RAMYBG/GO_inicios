@@ -19,4 +19,14 @@ func main() {
 		"jaime Gamarra", 263, "Santillana SAC", "Secundaria")
 	myTextBook.PrintInfo()
 
+	fmt.Print("==========================\n")
+	fmt.Print("==========================\n")
+	fmt.Print("==========================\n")
+	myBook2.PrintInfo()
+	myTextBook.PrintInfo()
+	fmt.Print("==========================\n")
+	fmt.Print("==========================\n")
+	fmt.Print("==========================\n")
+	book.Print(myBook2)
+	book.Print(myTextBook)
 }

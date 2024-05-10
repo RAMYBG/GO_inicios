@@ -2,6 +2,15 @@ package book
 
 import "fmt"
 
+//Polimorfismo
+type Printable interface {
+	PrintInfo()
+}
+
+func Print(p Printable) {
+	p.PrintInfo()
+}
+
 //Atributos del Libro
 //Modelo de un objeto
 type Book struct {
@@ -50,5 +59,5 @@ func NewTextBook(title, author string, pages int, editorial, level string) *Text
 }
 
 func (b *TextBook) PrintAll() {
-	fmt.Printf("Title: %s\nAuthor: %s\nEditorial:%s\nNivel: %s\n", b.title, b.author, b.pages, b.editorial)
+	fmt.Printf("Title: %s\nAuthor: %s\nEditorial:%s\nNivel: %d\n", b.title, b.author, b.editorial, b.pages)
 }
