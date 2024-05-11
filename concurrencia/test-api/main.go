@@ -16,8 +16,9 @@ func main() {
 		"https://graph.microsoft.com",
 	}
 	for _, api := range apis {
-		checkAPI(api)
+		go checkAPI(api) //Aqui se aplica la concurrencia agregagando go
 	}
+	time.Sleep(5 * time.Second) //Se agrega un tiempo de suspenso para definir el tiempo que va esperar  para la ejecucion
 	elapsed := time.Since(start)
 	fmt.Printf("¡Listo! ¡Tomo %v segundos!\n", elapsed.Seconds())
 
