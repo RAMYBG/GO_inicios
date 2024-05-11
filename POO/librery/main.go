@@ -28,9 +28,27 @@ func main() {
 	//fmt.Print("==========================\n")
 	//book.Print(myBook2)
 	//book.Print(myTextBook)
-	miPerro := animal.Perro{Nombre: "Max"}
-	miGato := animal.Gato{Nombre: "Tom"}
-	animal.HacerSonido(&miPerro)
-	animal.HacerSonido(&miGato)
+	//miPerro := animal.Perro{Nombre: "Max"}
+	//miGato := animal.Gato{Nombre: "Tom"}
+	//animal.HacerSonido(&miPerro)
+	//animal.HacerSonido(&miGato)
+	//Se iteran los animales
+	animales := []animal.Animal{
+		&animal.Perro{
+			Nombre: "Max",
+		},
+		&animal.Gato{
+			Nombre: "Tom",
+		},
+		&animal.Perro{
+			Nombre: "Buddy",
+		},
+		&animal.Gato{
+			Nombre: "Milo",
+		},
+	}
+	for _, animal := range animales {
+		animal.Sonido()
+	}
 
 }
