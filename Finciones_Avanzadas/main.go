@@ -1,24 +1,21 @@
+// Declara el nombre del paquete en el que está definido este código. En Go, todo código pertenece a un paquete.
 package main
 
+// Importa el paquete "fmt", que se utiliza para operaciones de entrada y salida, como imprimir texto en la consola.
 import "fmt"
 
-//Funcion variadica
-func suma(name string, nums ...int) int {
-	var total int
-	for _, num := range nums {
-		total += num
+// Define una función llamada 'factorial' que toma un entero 'n' como argumento y retorna un entero.
+func factorial(n int) int {
+	// Condición base de la recursión: si n es 0, retorna 1, porque el factorial de 0 es 1.
+	if n == 0 {
+		return 1
 	}
-	fmt.Printf("Hola %s, la suma es %d\n", name, total)
-	return total
+	// Caso recursivo: retorna n multiplicado por el factorial de n-1.
+	return n * factorial(n-1)
 }
 
-func imprimirDatos(datos ...interface{}) { //Interface es para recibir dats sin discriminacion
-	for _, dato := range datos {
-		fmt.Printf("%T - %v\n", dato, dato)
-	}
-}
-
+// La función 'main' es el punto de entrada del programa. En Go, la ejecución comienza con main.
 func main() {
-	fmt.Println(suma("Ramiro", 102, 34, 52, 44))
-	imprimirDatos("Hola", 132, 123.45, true) //Imprime que tipo de datos es y recibe N cantidad de datos sin importar el tipo
+	// Imprime el resultado de la función 'factorial' con el argumento 10, usando la función Println del paquete 'fmt'.
+	fmt.Println(factorial(10))
 }
