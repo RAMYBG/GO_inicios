@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 //Funcion variadica
-func suma(nums ...int) int {
+func suma(name string, nums ...int) int {
 	var total int
 	for _, num := range nums {
 		total += num
 	}
+	fmt.Printf("Hola %s, la suma es %d\n", name, total)
 	return total
 }
 
 func main() {
-	suma(12, 3, 4, 364, 2, 12)
-	fmt.Println(suma(102, 34, 52, 44))
+	fmt.Println(suma("Ramiro", 102, 34, 52, 44))
 }
