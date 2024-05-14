@@ -27,10 +27,24 @@ func getAlbums(c *gin.Context) {
 
 }
 
+func postAlbums(c *gin.Context) {
+	//se crea una instancia
+	var newAlbum album
+	// Se lee el body del request
+	//Se delcra una condicion
+	//Se vinxula los datos que recibe al album
+	if err := c.BindJSON(&newAlbum); err != nil { //Recibe una estructura y devuelve un error
+		return
+	}
+	albums = append(albums, newAlbum)
+	//No cambia al anterior
+	c.IndentedJSON(http.StatusCreated, albums)
+}
 func main() {
 	router := gin.Default()
 	//Metodo GET Trae todos los elementos de la lista
 	router.GET("/albums", getAlbums)
+	router.POST("/albums", postAlbums)
 	//Inicia el servidsor
 	router.Run("localhost:8080")
 }
