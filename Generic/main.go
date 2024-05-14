@@ -90,6 +90,12 @@ func Filter[T constraints.Ordered](list []T, callback func(T) bool) []T {
 	return resul
 }
 
+type Product[T uint | string] struct {
+	Id    T
+	Desc  string
+	Price float32
+}
+
 func main() {
 	lista1 := []string{"a", "b", "c"}
 	lista2 := []int{1, 2, 3, 4, 5}
@@ -109,4 +115,11 @@ func main() {
 	//Comienza a crear la lista apartir de la condicion del return
 	fmt.Println(Filter(lista2, func(value int) bool { return value > 3 }))
 
+	/////////////////////
+	////////////////
+	//Crear un producto //estructura Generica
+	product1 := Product[uint]{1, "Zapato", 50}
+	product2 := Product[string]{"SNDVNDFVDVSFDGDF-DG-DFH-DSV", "Zapato", 50}
+	fmt.Println(product1)
+	fmt.Println(product2)
 }
