@@ -14,5 +14,6 @@ func main() {
 		log.Fatal(err)
 	}
 	defer db.Close()
-	handles.ListContacts(db)
+	//handles.ListContacts(db)
+	handles.GetContactByID(db, 3)
 }
