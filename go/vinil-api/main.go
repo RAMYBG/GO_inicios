@@ -34,7 +34,7 @@ func postAlbums(c *gin.Context) {
 	// Se intenta vincular (parsear y asignar) los datos JSON recibidos en el cuerpo de la
 	// solicitud HTTP a la instancia 'newAlbum'.
 	// Si hay un error en este proceso, se termina la función y no se ejecuta el código restante.
-	if err := c.BindJSON(&newAlbum); err != nil {
+	if err := c.BindJSON(&newAlbum); err != nil { //Si no arroja un error se serializa el &newAlbum// De json a type struc albums
 		return
 	}
 
@@ -45,12 +45,26 @@ func postAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusCreated, albums)
 }
 
+func getAlbumsByID(c *gin.Context) {
+	id := c.Param("id")
+
+	for _, a := range albums {
+		if a.ID == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return //Si eso pasa termina el codigo
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album no encotrado"})
+}
+
 func main() {
 	// Se inicializa el router de Gin.
 	router := gin.Default()
 
 	// Se define una ruta GET en '/albums' que ejecuta la función 'getAlbums'.
 	router.GET("/albums", getAlbums)
+
+	router.GET("/albums/:id", getAlbumsByID)
 
 	// Se define una ruta POST en '/albums' que ejecuta la función 'postAlbums'.
 	router.POST("/albums", postAlbums)
