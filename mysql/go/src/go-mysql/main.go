@@ -3,7 +3,6 @@ package main
 import (
 	"go-mysql/database"
 	"go-mysql/handles"
-	"go-mysql/models"
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -24,15 +23,17 @@ func main() {
 	//	Phone: "123463",
 	//}
 	//Datos para actualizar con el ID
-	newContact2 := models.Contact{
-		Id:    1,
-		Name:  "Usuario",
-		Email: "nuevo@example.com",
-		Phone: "1289575863",
-	}
+	//newContact2 := models.Contact{
+	//Id:    1,
+	//Name:  "Usuario",
+	//Email: "nuevo@example.com",
+	//Phone: "1289575863",
+	//}
 	//Utiliza la funcion para hacer la insercion
 	//handles.CreateContac(db, newContact)
-	handles.UpdateCOntact(db, newContact2)
+	//handles.UpdateCOntact(db, newContact2)
+	//Elimina un registro
+	handles.DeleteContact(db, 5)
 	//Lista todos los contactos
 	handles.ListContacts(db)
 }
